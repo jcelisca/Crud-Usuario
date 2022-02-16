@@ -38,6 +38,11 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorId(id);
     }
 
+    @GetMapping(path = "/buscaNombre")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@RequestParam("nombre") String nombre){
+        return this.usuarioService.obtenerPorNombre(nombre);
+    }
+
     @GetMapping(path = "/buscaPrioridad")
     public ArrayList<UsuarioModel> obtenerUsuarioPorPrioridad(@RequestParam("prioridad") Integer prioridad){
         return this.usuarioService.obtenerPorPrioridad(prioridad);
