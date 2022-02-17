@@ -49,12 +49,12 @@ public class UsuarioService {
         }
     }
 
-    public boolean eliminarUsuario(Long id){
+    public String eliminarUsuario(Long id){
         try{
             usuarioRepository.deleteById(id);
-            return true;
+            return "Se elimino el usuario con Id: "+ id;
         }catch(Exception err){
-            return false;
+            return "No se pudo eliminar el usuario con Id: "+ id;
         }
     }
 }
