@@ -2,6 +2,8 @@ package com.sofka.usuario.crudUsuario.models;
 
 import javax.persistence.*;
 
+import javax.validation.constraints.*;
+
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel {
@@ -11,8 +13,15 @@ public class UsuarioModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
+    @Column(nullable = false, length = 30)
     private String nombre;
+
+    @Column(unique = true)
+    @Email
     private String email;
+
+    @Min(1)
+    @Max(5)
     private Integer prioridad;
 
     public Long getId() {
