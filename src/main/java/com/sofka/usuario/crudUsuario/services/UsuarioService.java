@@ -38,6 +38,16 @@ public class UsuarioService {
         return usuarioRepository.findByEmail(email);
     }
 
+    public String eliminarUsuario(String nombre){
+        try{
+            ArrayList<UsuarioModel> user = usuarioRepository.findByNombre(nombre);
+            usuarioRepository.deleteAll(user);
+            return "Se elimino el usuario: " + nombre;
+        }catch(Exception err){
+            return "El nombre de usuario no existe";
+        }
+    }
+
     public boolean eliminarUsuario(Long id){
         try{
             usuarioRepository.deleteById(id);

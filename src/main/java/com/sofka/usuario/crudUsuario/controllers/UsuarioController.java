@@ -38,8 +38,8 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorId(id);
     }
 
-    @GetMapping(path = "/buscaNombre")
-    public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@RequestParam("nombre") String nombre){
+    @GetMapping(path = "/buscaNombre/{nombre}")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@PathVariable("nombre") String nombre){
         return this.usuarioService.obtenerPorNombre(nombre);
     }
 
@@ -51,6 +51,11 @@ public class UsuarioController {
     @GetMapping(path = "/buscaEmail")
     public ArrayList<UsuarioModel> obtenerUsuarioPorEmail(@RequestParam("email") String email){
         return this.usuarioService.obtenerPorEmail(email);
+    }
+
+    @DeleteMapping(path = "/delete/{nombre}")
+    public String eliminarUsuarioPorNombre(@PathVariable("nombre") String nombre){
+        return usuarioService.eliminarUsuario(nombre);
     }
 
     @DeleteMapping(path = "/{id}")

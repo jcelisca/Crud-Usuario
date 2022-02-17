@@ -12,16 +12,17 @@ public class UsuarioModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(nullable = false, length = 30)
-    private String nombre;
+    @Column(name = "nombre", length = 30)
+    private String nombre = "user";
 
-    @Column(unique = true)
+    @Column(name = "email")
     @Email
-    private String email;
+    private String email = "noemail@email.com";
 
     @Min(1)
     @Max(5)
-    private Integer prioridad;
+    @Column(name = "prioridad")
+    private Integer prioridad = 1;
 
     public Long getId() {
         return id;
