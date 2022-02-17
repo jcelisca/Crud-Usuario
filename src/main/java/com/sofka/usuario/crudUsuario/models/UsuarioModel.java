@@ -19,9 +19,9 @@ public class UsuarioModel {
     @Email
     private String email = "noemail@email.com";
 
+    @Column(name = "prioridad")
     @Min(1)
     @Max(5)
-    @Column(name = "prioridad")
     private Integer prioridad = 1;
 
     public Long getId() {

@@ -48,8 +48,8 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
-    @GetMapping(path = "/buscaEmail")
-    public ArrayList<UsuarioModel> obtenerUsuarioPorEmail(@RequestParam("email") String email){
+    @GetMapping(path = "/buscaEmail/{email}")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorEmail(@PathVariable("email") String email){
         return this.usuarioService.obtenerPorEmail(email);
     }
 
