@@ -1,7 +1,6 @@
 package com.sofka.usuario.crudUsuario.models;
 
 import javax.persistence.*;
-
 import javax.validation.constraints.*;
 
 @Entity
